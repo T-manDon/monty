@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
-*f_pstr - print string from top
+*f_pstr - print top string
 *@head: head variable
 *@counter: counter var
 *Return: 0
@@ -10,20 +10,27 @@
 void f_pstr(stack_t **head, unsigned int counter)
 
 {
-stack_t *h;
+stack_t *a;  /* Pointer to traverse the stack */
+
 (void)counter;
-h = *head;
 
-while (h)
+a = *head;
+
+while (a)
+
 {
-if (h->n > 127 || h->n <= 0)
+/* Check if the value is outside the printable ASCII range */
+if (a->n > 127 || a->n <= 0)
+
 {
-break;
+break;  /* Exit loop if not a printable character */
 }
 
-printf("%c", h->n);
-h = h->next;
+printf("%c", a->n);  /* Print the character */
+
+a = a->next;
+
 }
 
-printf("\n");
+printf("\n");  /* Print a new line at the end of the string */
 }
