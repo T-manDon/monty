@@ -9,25 +9,25 @@
 
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter)
 {
-    stack_t *copy;  /* A pointer to traverse the stack */
+stack_t *copy;  /* A pointer to traverse the stack */
 
-    copy = *head;
+copy = *head;
 
-    /* If the stack is empty or contains only one element, no rotation is needed */
-    if (*head == NULL || (*head)->next == NULL)
-    {
-        return;
-    }
+/* If the stack is empty or contains only one element, no rotation is needed */
+if (*head == NULL || (*head)->next == NULL)
+{
+return;
+}
 
-    /* Traverse the stack to find the last element */
-    while (copy->next)
-    {
-        copy = copy->next;
-    }
+/* Traverse the stack to find the last element */
+while (copy->next)
+{
+copy = copy->next;
+}
 
-    /* Update pointers to achieve rotation */
-    copy->next = *head;
-    copy->prev->next = NULL;
-    copy->prev = NULL;
-    (*head)->prev = copy;
-    (*head) = copy;  /* Update the head poit*/
+/* Update pointers to achieve rotation */
+copy->next = *head;
+copy->prev->next = NULL;
+copy->prev = NULL;
+(*head)->prev = copy;
+(*head) = copy;  /* Update the head poit*/
