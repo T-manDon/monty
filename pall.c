@@ -2,6 +2,7 @@
 
 /**
 *f_pall - this function prints stack
+*
 *@head: the head variable
 *@counter: the counter
 * Return: 0

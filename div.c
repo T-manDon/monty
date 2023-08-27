@@ -11,17 +11,17 @@ void f_div(stack_t **head, unsigned int counter)
 
 {
 
-stack_t *h;
+stack_t *a;
 
 int len = 0, aux;
 
-h = *head;
+a = *head;
 
-while (h)
+while (a)
 
 {
 
-h = h->next;
+a = a->next;
 
 len++;
 
@@ -30,37 +30,42 @@ len++;
 if (len < 2)
 
 {
-	fprintf(stderr, "L%d: cannot divide, stack too short\n", counter);
 
-	fclose(bus.file);
+fprintf(stderr, "L%d: can't div, stack too short\n", counter);
 
-	free(bus.content);
+fclose(bus.file);
 
-	free_stack(*head);
+free(bus.content);
 
-	exit(EXIT_FAILURE);
+free_stack(*head);
+
+exit(EXIT_FAILURE);
+
 }
-	h = *head;
 
-	if (h->n == 0)
+a = *head;
+
+if (a->n == 0)
+
 {
-	fprintf(stderr, "L%d: division by zero\n", counter);
 
-	fclose(bus.file);
+fprintf(stderr, "L%d: division by zero\n", counter);
 
-	free(bus.content);
+fclose(bus.file);
 
-	free_stack(*head);
+free(bus.content);
 
-	exit(EXIT_FAILURE);
+free_stack(*head);
+
+exit(EXIT_FAILURE);
 
 }
 
-	aux = h->next->n / h->n;
+aux = a->next->n / a->n;
 
-	h->next->n = aux;
+a->next->n = aux;
 
-	*head = h->next;
+*head = a->next;
 
-	free(h);
+free(a);
 }

@@ -2,16 +2,15 @@
 bus_t bus = {NULL, NULL, NULL, 0};
 
 /**
-*main - Program for interpreting Monty code
-*@argc: the argument
-*@argv: the argument variable
-*Return: 0
+* main - the main code function
+* @argc: the argument var
+* @argv: the second var
+* Return: 0
 */
 
 int main(int argc, char *argv[])
 
 {
-
 char *content;
 
 FILE *file;
@@ -63,7 +62,9 @@ counter++;
 if (read_line > 0)
 
 {
+
 execute(content, &stack, counter, file);
+
 }
 
 free(content);
@@ -75,4 +76,5 @@ free_stack(stack);
 fclose(file);
 
 return (0);
+
 }
