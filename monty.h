@@ -11,7 +11,7 @@
 
 /**
  * struct stack_s - the qued respresentaion of stack
- * @b: integer variable
+ * @n: variable
  * @prev: previous slack elements
  * @next: next slack elements
  * Description: doubly list
@@ -20,7 +20,7 @@
 typedef struct stack_s
 
 {
-int b;
+int n;
 struct stack_s *prev;
 struct stack_s *next;
 } stack_t;
@@ -78,8 +78,8 @@ void f_pchar(stack_t **head, unsigned int counter);
 void f_pstr(stack_t **head, unsigned int counter);
 void f_rotl(stack_t **head, unsigned int counter);
 void f_rotr(stack_t **head, __attribute__((unused)) unsigned int counter);
-void addnode(stack_t **head, int b);
-void addqueue(stack_t **head, int b);
+void addnode(stack_t **head, int n);
+void addqueue(stack_t **head, int n);
 void f_queue(stack_t **head, unsigned int counter);
 void f_stack(stack_t **head, unsigned int counter);
 

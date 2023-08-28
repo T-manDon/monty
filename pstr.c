@@ -10,25 +10,25 @@
 void f_pstr(stack_t **head, unsigned int counter)
 
 {
-stack_t *a;  /* Pointer to traverse the stack */
+stack_t *h;  /* Pointer to traverse the stack */
 
 (void)counter;
 
-a = *head;
+h = *head;
 
-while (a)
+while (h)
 
 {
 /* Check if the value is outside the printable ASCII range */
-if (a->n > 127 || a->n <= 0)
+if (h->n > 127 || h->n <= 0)
 
 {
 break;  /* Exit loop if not a printable character */
 }
 
-printf("%c", a->n);  /* Print the character */
+printf("%c", h->n);  /* Print the character */
 
-a = a->next;
+h = h->next;
 
 }
 

@@ -10,19 +10,19 @@
 void f_pall(stack_t **head, unsigned int counter)
 
 {
-stack_t *a;  /* Pointer to traverse the stack */
+stack_t *h;  /* Pointer to traverse the stack */
 (void)counter;
 
-a = *head;
-    
+h = *head;
+
 /* Check if the stack is empty */
-if (a == NULL)
+if (h == NULL)
 return;
 
 /* Print each element in the stack */
-while (a)
+while (h)
 {
-printf("%d\n", a->n);
-a = a->next;
+printf("%d\n", h->n);
+h = h->next;
 }
 }

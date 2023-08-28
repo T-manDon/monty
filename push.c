@@ -10,7 +10,7 @@
 void f_push(stack_t **head, unsigned int counter)
 
 {
-int b, j = 0, flag = 0;
+int n, j = 0, flag = 0;
 
 /* Check if the argument exists and is valid */
 if (bus.arg)
@@ -41,11 +41,11 @@ exit(EXIT_FAILURE);
 }
 
 /* Convert argument to an integer */
-b = atoi(bus.arg);
+n = atoi(bus.arg);
 
 /* Check if adding to stack or queue */
 if (bus.lifi == 0)
-addnode(head, b);  /* Add to stack */
+addnode(head, h);  /* Add to stack */
 else
-addqueue(head, b);  /* Add to queue */
+addqueue(head, h);  /* Add to queue */
 }

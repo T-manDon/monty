@@ -11,7 +11,7 @@
 void f_pop(stack_t **head, unsigned int counter)
 
 {
-stack_t *a;  /* Temporary pointer to the top element */
+stack_t *h;  /* Temporary pointer to the top element */
 
 if (*head == NULL)
 
@@ -27,9 +27,9 @@ free_stack(*head);
 exit(EXIT_FAILURE);
 }
 
-a = *head;           /* Store the current top element */
+h = *head;           /* Store the current top element */
 
-*head = a->next;      /* Move the head to the next element */
+*head = h->next;      /* Move the head to the next element */
 
-free(a);              /* Free the previous top element */
+free(h);              /* Free the previous top element */
 }

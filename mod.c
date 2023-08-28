@@ -8,65 +8,45 @@
 */
 
 void f_mod(stack_t **head, unsigned int counter)
-
 {
-
-stack_t *a;
-
+stack_t *h;
 int len = 0, aux;
 
-a = *head;
+h = *head;
 
-while (a)
-
+/* Calculate the length of the stack */
+while (h)
 {
-
-a = a->next;
-
+h = h->next;
 len++;
-
 }
 
+/* Check if there are at least two elements in the stack */
 if (len < 2)
-
 {
-
 fprintf(stderr, "L%d: can't mod, stack too short\n", counter);
-
 fclose(bus.file);
-
 free(bus.content);
-
 free_stack(*head);
-
 exit(EXIT_FAILURE);
-
 }
 
-a = *head;
+h = *head;
 
-if (a->n == 0)
-
+/* Check for division by zero */
+if (h->n == 0)
 {
-
 fprintf(stderr, "L%d: division by zero\n", counter);
-
 fclose(bus.file);
-
 free(bus.content);
-
 free_stack(*head);
-
 exit(EXIT_FAILURE);
-
 }
 
-aux = a->next->n % a->n;
+/* Calculate the remainder of the division */
+aux = h->next->n % h->n;
+h->next->n = aux;
+*head = h->next;
 
-a->next->n = aux;
-
-*head = a->next;
-
-free(a);
-
+free(h); /* Free the current top node */
 }

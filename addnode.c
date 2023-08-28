@@ -4,11 +4,11 @@
  * addnode - increases the number of nodes
  *
  * @head: stackhead variable
- * @b: the nth value
+ * @n: the nth value
  * Return: 0
 */
 
-void addnode(stack_t **head, int b)
+void addnode(stack_t **head, int n)
 
 {
 
@@ -32,7 +32,7 @@ if (aux)
 
 aux->prev = new_node;
 
-new_node->n = b;
+new_node->n = n;
 
 new_node->next = *head;
 

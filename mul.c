@@ -10,15 +10,15 @@
 void f_mul(stack_t **head, unsigned int counter)
 
 {
-stack_t *a;          /* main variable */
+stack_t *h;          /* main variable */
 int len = 0, aux;
 
-a = *head;
+h = *head;
 
 /* Count the number of elements in the stack */
-while (a)
+while (h)
 {
-a = a->next;
+h = h->next;
 len++;
 }
 
@@ -32,9 +32,9 @@ free_stack(*head);
 exit(EXIT_FAILURE);
 }
 
-a = *head;
-aux = a->next->n * a->n;   /* Multiply the top two elements */
-a->next->n = aux;          /* Store the result in the next element */
-*head = a->next;           /* Move the head to the next element */
-free(a);                   /* Free the previous top element */
+h = *head;
+aux = h->next->n * h->n;   /* Multiply the top two elements */
+h->next->n = aux;          /* Store the result in the next element */
+*head = h->next;           /* Move the head to the next element */
+free(h);                   /* Free the previous top element */
 }
