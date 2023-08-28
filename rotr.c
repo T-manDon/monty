@@ -30,4 +30,5 @@ copy->next = *head;
 copy->prev->next = NULL;
 copy->prev = NULL;
 (*head)->prev = copy;
-(*head) = copy;  /* Update the head poit*/
+(*head) = copy;
+}

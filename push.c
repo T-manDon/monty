@@ -45,7 +45,7 @@ n = atoi(bus.arg);
 
 /* Check if adding to stack or queue */
 if (bus.lifi == 0)
-addnode(head, h);  /* Add to stack */
+addnode(head, n);  /* Add to stack */
 else
-addqueue(head, h);  /* Add to queue */
+addqueue(head, n);  /* Add to queue */
 }
